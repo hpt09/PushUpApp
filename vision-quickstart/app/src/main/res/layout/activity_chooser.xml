@@ -28,8 +28,23 @@
       android:textColor="@color/white"
       android:textSize="18sp"/>
 
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Push Ups Count" />
+
+  <EditText
+      android:id="@+id/editTextNumber"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:ems="10"
+      android:hint="5"
+      android:inputType="number" />
+
   <ListView
       android:id="@+id/test_activity_list_view"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
+      android:layout_height="396dp" />
+
 </LinearLayout>
