@@ -268,6 +268,8 @@ public final class LivePreviewActivity extends AppCompatActivity
           boolean visualizeZ = PreferenceUtils.shouldPoseDetectionVisualizeZ(this);
           boolean rescaleZ = PreferenceUtils.shouldPoseDetectionRescaleZForVisualization(this);
           boolean runClassification = PreferenceUtils.shouldPoseDetectionRunClassification(this);
+          String count = getIntent().getStringExtra("count").toString();
+          System.out.println("It is passed : " + count);
           cameraSource.setMachineLearningFrameProcessor(
               new PoseDetectorProcessor(
                   this,

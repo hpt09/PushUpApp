@@ -35,7 +35,7 @@
       android:text="Push Ups Count" />
 
   <EditText
-      android:id="@+id/editTextNumber"
+      android:id="@+id/inputNumber"
       android:layout_width="match_parent"
       android:layout_height="48dp"
       android:ems="10"

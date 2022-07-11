@@ -119,6 +119,7 @@ public class PoseClassifierProcessor {
       for (RepetitionCounter repCounter : repCounters) {
         int repsBefore = repCounter.getNumRepeats();
         int repsAfter = repCounter.addClassificationResult(classification);
+        // Need to check input count here?
         if (repsAfter > repsBefore) {
           // Play a fun beep when rep counter updates.
           ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);

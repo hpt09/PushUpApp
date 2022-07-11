@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.google.mlkit.vision.demo.BuildConfig;
@@ -38,6 +39,7 @@ import com.google.mlkit.vision.demo.R;
 public final class ChooserActivity extends AppCompatActivity
     implements AdapterView.OnItemClickListener {
   private static final String TAG = "ChooserActivity";
+  EditText input;
 
   @SuppressWarnings("NewApi") // CameraX is only available on API 21+
   private static final Class<?>[] CLASSES =
@@ -76,6 +78,7 @@ public final class ChooserActivity extends AppCompatActivity
     Log.d(TAG, "onCreate");
 
     setContentView(R.layout.activity_chooser);
+    input = (EditText) findViewById(R.id.inputNumber);
 
     // Set up ListView and Adapter
     ListView listView = findViewById(R.id.test_activity_list_view);
@@ -90,7 +93,11 @@ public final class ChooserActivity extends AppCompatActivity
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     Class<?> clicked = CLASSES[position];
-    startActivity(new Intent(this, clicked));
+
+    System.out.println("Push up count is set to " + input.getText());
+    Intent i = new Intent(this, clicked);
+    i.putExtra("count", input.getText());
+    startActivity(i);
   }
 
   private static class MyArrayAdapter extends ArrayAdapter<Class<?>> {
